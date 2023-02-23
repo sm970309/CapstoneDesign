@@ -1,8 +1,10 @@
 import pandas as pd
 
-# df =pd.DataFrame({'url':'youtube.com','start':10,'end':20,'text':'예시입니다'},index=[0])
-# df.to_csv('linklist.csv')
-df =pd.read_csv('linklist.csv')
+# 욕 들어간거: neg,  욕 없는거: pos
+# 자기 담당에 맞게 주석처리 후 실행
+
+df=pd.read_csv('pos_linklist.csv')
+# df =pd.read_csv('neg_linklist.csv')
 df = df.iloc[:,1:]
 print(df)
 
@@ -20,4 +22,5 @@ while True:
 new_df = pd.DataFrame(array,columns=['url','start','end','text'])
 new_df = pd.concat([df,new_df])
 
-new_df.to_csv('linklist.csv')
+new_df.to_csv('pos_linklist.csv')
+# new_df.to_csv('neg_linklist.csv')
