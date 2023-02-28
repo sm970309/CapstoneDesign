@@ -1,0 +1,10 @@
+C:\Users\kjkw5\source\repos\졸업작품_ui\졸업작품_ui\bin\Debug\졸업작품_ui.exe.config
+C:\Users\kjkw5\source\repos\졸업작품_ui\졸업작품_ui\bin\Debug\졸업작품_ui.exe
+C:\Users\kjkw5\source\repos\졸업작품_ui\졸업작품_ui\bin\Debug\졸업작품_ui.pdb
+C:\Users\kjkw5\source\repos\졸업작품_ui\졸업작품_ui\obj\Debug\졸업작품_ui.csproj.AssemblyReference.cache
+C:\Users\kjkw5\source\repos\졸업작품_ui\졸업작품_ui\obj\Debug\졸업작품_ui.MainForm.resources
+C:\Users\kjkw5\source\repos\졸업작품_ui\졸업작품_ui\obj\Debug\졸업작품_ui.Properties.Resources.resources
+C:\Users\kjkw5\source\repos\졸업작품_ui\졸업작품_ui\obj\Debug\졸업작품_ui.csproj.GenerateResource.cache
+C:\Users\kjkw5\source\repos\졸업작품_ui\졸업작품_ui\obj\Debug\졸업작품_ui.csproj.CoreCompileInputs.cache
+C:\Users\kjkw5\source\repos\졸업작품_ui\졸업작품_ui\obj\Debug\졸업작품_ui.exe
+C:\Users\kjkw5\source\repos\졸업작품_ui\졸업작품_ui\obj\Debug\졸업작품_ui.pdb

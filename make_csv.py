@@ -3,8 +3,8 @@ import pandas as pd
 # 욕 들어간거: neg,  욕 없는거: pos
 # 자기 담당에 맞게 주석처리 후 실행
 
-df=pd.read_csv('pos_linklist.csv')
-# df =pd.read_csv('neg_linklist.csv')
+# df=pd.read_csv('pos_linklist.csv')
+df =pd.read_csv('neg_linklist.csv')
 df = df.iloc[:,1:]
 print(df)
 
