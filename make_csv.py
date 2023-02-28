@@ -22,5 +22,5 @@ while True:
 new_df = pd.DataFrame(array,columns=['url','start','end','text'])
 new_df = pd.concat([df,new_df])
 
-new_df.to_csv('pos_linklist.csv')
-# new_df.to_csv('neg_linklist.csv')
+#new_df.to_csv('pos_linklist.csv')
+new_df.to_csv('neg_linklist.csv')
