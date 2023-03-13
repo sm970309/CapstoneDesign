@@ -1,2 +1,27 @@
 ,url,start,end,text
-0,youtube.com,10,20,ì˜ˆì‹œìž…ë‹ˆë‹¤
+0,youtube.com,10,20,?ˆì‹œ?…ë‹ˆ?
+1,https://www.youtube.com/watch?v=c7kM4kmq1uc&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif,271,276,¹ÌÄ£ ¼¼»óÀÌ¾ß ½ÃÆÈ ÀÌ°Ô ¸»ÀÌ µÅ¿ä?
+2,https://www.youtube.com/watch?v=c7kM4kmq1uc&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif,436,442,±× »õ³¢°¡ ±×·¸´Ù ÇÏ¸é ¹ÏÀ»²¨¾ß? ±× »õ³¢°¡ ºñÆ®ÄÚÀÎ ±ÝÀÌ¶ó ÇÏ¸é ¹ÏÀ»°Å³Ä°í
+3,https://www.youtube.com/watch?v=c7kM4kmq1uc&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif,479,483,±×·³ ½Ã¹Ù ¿À´Ã ºñÆ®ÄÚÀÎ µÒ½ºµ¥ÀÌ Âï´Â°Å¾ß
+4,https://www.youtube.com/watch?v=_-J-gDPQpNU&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=2,175,258,ºÒÆíÇØ ºÒÆíÇÏ¸é ½Ã¹Ù ÀÚ¼¼¸¦ °íÃÄ ¾É¾Æ
+5,https://www.youtube.com/watch?v=_-J-gDPQpNU&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=2,439,442,ÀÌ »õ³¢ ÃëÇß³×
+6,https://www.youtube.com/watch?v=_-J-gDPQpNU&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=2,468,451,¼½½º ¹¹ ÀÌ·¯°í ÀÖ³Ä
+7,https://www.youtube.com/watch?v=r5XcUGZIlto&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=3,287,291,ÀÀ ÈúÀÖ¾î ÀÌ »õ³¢¾ß
+8,https://www.youtube.com/watch?v=r5XcUGZIlto&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=3,344,348,¾î ¾¾¹ß
+9,https://www.youtube.com/watch?v=r5XcUGZIlto&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=3,378,681,¾Æ ÆÄÀÌÅ© ¾¾¹ß °³¶ì²®³×
+10,https://www.youtube.com/watch?v=r5XcUGZIlto&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=3,816,819,ÁøÂ¥ Á¿ µÉ»· Çß´Ù ÁøÂ¥
+11,https://www.youtube.com/watch?v=wSKQKqFsIBg&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=5,9,15,Â¥Áõ Á¸³ª Á¸³ª³¾²¨¾ß ¾Æ¸¶ ´õ·¯¿î¹æ¼ÛÀÌ¾ß º¸Áö¸¶ ¾êµé¾Æ
+12,https://www.youtube.com/watch?v=wSKQKqFsIBg&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=5,60,63,¿ø·¡ ¸øÇÏ´Â »õ³¢µé Æ¯Â¡ÀÌ¾ß ÀÔ¸¸ »ì°Åµç
+13,https://www.youtube.com/watch?v=wSKQKqFsIBg&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=5,62,66,ÀÔ¸¸ »ì°Åµç Á¿µµ ¸øÇÏ¸é¼­ Áö°¡ ÀßÇÏ´ÂÁÙ ¾Ë°í ±×°Ô
+14,https://www.youtube.com/watch?v=wSKQKqFsIBg&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=5,186,189,À¸ ¹ö½º ¸ÂÀÚ³ª ¾¾¹ß ÀÌ·¯¸é¼­ °³Áö¶öÇØ¼­
+15,https://www.youtube.com/watch?v=0x2NIQqhlVc&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=5,8,11,¹¹ ÀÌ ¹ÌÄ£ »õ³¢¾ß
+16,https://www.youtube.com/watch?v=0x2NIQqhlVc&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=5,15,18,ÀÌ·± º´½Å»õ³¢ ¾ß ÀÌ»õ³¢ µÚÁ³¾î
+17,https://www.youtube.com/watch?v=0x2NIQqhlVc&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=5,32,34,ÀÌ·± º´½Å»õ³¢¶ó°í ¾ß¾ß
+18,https://www.youtube.com/watch?v=Ikn9hrLaQ-8&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=6,13,20,¾ß ¿åµµ °¡²û³ª¿Í¾ß Àç¹Õ´Â°ÅÁö ¸Ç³¯ ½ÃÆÈ·ÃÀÌ ½ÃÆÈ·ÃÀÌ ½ÃÆÈ·ÃÀÌ ¹¹ °è¼Ó³ª¿Í ¿äÁò¿¡¾ß
+19,https://www.youtube.com/watch?v=9eVzWijIsKE&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=8,51,55,³»°¡ ¹¹ ·Ñ ¾ÈÇÒ¶§°í ¿åÇÏ´Â »ç¶÷ÀÎ ÁÙ ¾Æ³× Àú ±×·± ¹ÌÄ£³ð ¾Æ´Õ´Ï´Ù
+20,https://www.youtube.com/watch?v=9eVzWijIsKE&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=8,252,255,¾Æ´Ï±×·³ ½Ã¹Ù ¹» ÀÐ¾îÁà¾ß µÅ
+21,https://www.youtube.com/watch?v=9eVzWijIsKE&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=8,481,488,¾Æ ¾¾¹ß ¾î¾î
+22,https://www.youtube.com/watch?v=9eVzWijIsKE&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=8,488,491,ÇÎ ÂïÁö¸¶ °³»õ³¢¾ß
+23,https://www.youtube.com/watch?v=9eVzWijIsKE&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=8,653,657,¾Æ Á¿µÆ³× ¾Æ °É·È´Ù
+24,https://www.youtube.com/watch?v=7SwQ93rr4SE&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=11,13,20,¾Æ´Ï ¶óÀÌ¾ù¿¡¼­ ¾Æ´Ï¶óÀÝ¾Æ ¾¾¹ß º´½Å¾Æ ¾î
+25,https://www.youtube.com/watch?v=K2JyNLtp93Q&list=PLoLWSFcGmTUD25Q28NTZV1wBWSwX0Pnif&index=10,24,30,ÀßÀÚ ¼º´ë¿ÀºþÁÙ ¾¾¹ß ¾ß ¾¾¹ß»õ³¢¾ß ÀÌ·± ¾¾¹ß·ÃÀÌ
