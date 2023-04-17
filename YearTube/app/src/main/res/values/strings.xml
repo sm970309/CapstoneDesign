@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">YearTube</string>
+    <string name="example_link">Youtube 링크를 입력하세요.</string>
+    <string name="explain_enterlink">영상 링크 입력</string>
 </resources>
