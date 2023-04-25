@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import sys
 
@@ -34,6 +34,5 @@ def check(request):
     # audio_file_path = yt.download_shorts(url)
     # if audio_file_path is None:
     #     return HttpResponse("error occurred")
-    
-    
-    return HttpResponse(f'{res} : {url}')
+    result = {res: url}
+    return JsonResponse(result)
