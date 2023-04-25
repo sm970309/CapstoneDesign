@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 import sys
 
 sys.path.append('../')
-from modules import *
+from modules import yt
 
 article = '''
 <!DOCTYPE html>
@@ -31,9 +31,9 @@ def index(request):
 def check(request):
     res= "result"
     url = request.POST['url']
-    audio_file_path = yt.download_shorts(url)
-    if audio_file_path is None:
-        return HttpResponse("error occurred")
+    # audio_file_path = yt.download_shorts(url)
+    # if audio_file_path is None:
+    #     return HttpResponse("error occurred")
     
     
-    return HttpResponse(res)
+    return HttpResponse(f'{res} : {url}')
