@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 import sys
 
 sys.path.append('../')
-from modules import yt
+from modules import yt,stt
 
 article = '''
 <!DOCTYPE html>
@@ -29,10 +29,15 @@ def index(request):
 
 @csrf_exempt
 def check(request):
-    res= "result"
     url = request.POST['url']
-    # audio_file_path = yt.download_shorts(url)
-    # if audio_file_path is None:
-    #     return HttpResponse("error occurred")
-    result = {res: url}
-    return JsonResponse(result)
+    audio_file_path = yt.download_shorts(url)
+    if audio_file_path is None:
+        return HttpResponse("error occurred")
+    res_id = stt.useAPI(audio_file_path)
+    text = stt.makeTextline(res_id)
+    
+    # 프론트 연동 테스트용
+    # result = {'result': url}
+    
+    # html에서 한글 깨지는 거 수정
+    return JsonResponse(text,json_dumps_params={'ensure_ascii': False}, status=200)

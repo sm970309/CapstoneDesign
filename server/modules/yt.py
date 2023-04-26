@@ -1,10 +1,11 @@
 from pytube import YouTube,Playlist
 import os
-from tqdm import tqdm
 import moviepy.editor as mp
-from glob import glob 
 
-DIR_ORIGIN = os.path.join('audio_file')
+current_path = os.path.abspath(__file__)
+parent_path = os.path.dirname(os.path.dirname(os.path.dirname(current_path)))
+
+DIR_ORIGIN = os.path.join(parent_path,'audio_file')
 
 # youtube url 불러와서 mp4,mp3파일로 저장
 def download_shorts(url):
@@ -21,7 +22,7 @@ def download_shorts(url):
         stream.download(output_path=DIR_ORIGIN,filename="tmp.mp4")
         
         # download mp3
-        path = os.path.join(os.getcwd(),DIR_ORIGIN)
+        path = os.path.join(DIR_ORIGIN)
         clip = mp.VideoFileClip(os.path.join(path,'tmp.mp4'))
 
         audio_file_path = os.path.join(path,"tmp.mp3")
