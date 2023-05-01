@@ -24,10 +24,11 @@ public class EnterlinkActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                ProgressDialog progressDialog = new ProgressDialog(this);
-                progressDialog.setMessage("로딩 중...");
-                progressDialog.setCancelable(false); // 사용자가 취소할 수 없도록 설정
-                progressDialog.show();
+                String text = edit_youtube_link.getText().toString();
+
+                Intent intent = new Intent(getApplicationContext(), LoadingScreenActivity.class);
+                intent.putExtra("text", text);
+                startActivity(intent);
             }
         });
 
