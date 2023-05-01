@@ -39,7 +39,7 @@ def makeTextline(res_id):
             time.sleep(5)
             continue
         elif text.json()['status']=='failed':
-            text= dumps({'result':'error'})
+            text= json.dumps({'result':'error'})
             break
         else:
             break
