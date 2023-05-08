@@ -1,4 +1,4 @@
-from pytube import YouTube,Playlist
+from pytube import YouTube
 import os
 import moviepy.editor as mp
 
@@ -15,8 +15,7 @@ def download_shorts(url):
         print('only shorts plz')
         return 
     try:
-        yt = YouTube(url)
-
+        yt = YouTube(url,use_oauth=True, allow_oauth_cache=True)
         # download mp4
         stream = yt.streams.filter(file_extension='mp4').first()
         stream.download(output_path=DIR_ORIGIN,filename="tmp.mp4")
