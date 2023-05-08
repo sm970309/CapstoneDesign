@@ -5,7 +5,7 @@ import sys
 from kss import split_sentences
 
 sys.path.append('../')
-from modules import yt,stt
+from modules import yt,stt,unsmile
 
 article = '''
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ article = '''
   </head>
   <body>
     <h1>UI 구현부분</h1>
-    <form method="get" action="/check/">
+    <form method="post" action="/check/">
       <label for="id">URL:</label>
       <input type="text" id="id" name="url">
       <br>
@@ -35,12 +35,18 @@ def check(request):
     if audio_file_path is None:
         return HttpResponse("error occurred")
     res_id = stt.useAPI(audio_file_path)
-    text = stt.makeTextline(res_id)
-    text = text['results']['utterances'][0]['msg']
-    text = split_sentences(text)
+    result = stt.makeTextline(res_id)
+    text= ''
+    for t in result['results']['utterances']:
+        text +=t['msg']
     print(text)
+    texts = split_sentences(text)
+    print(texts)
+    # text = unsmile.calcScore(text)
+
     # 프론트 연동 테스트용
     # result = {'result': url}
     # return JsonResponse(result)
+
     # html에서 한글 깨지는 거 수정
-    return JsonResponse({"text":text},json_dumps_params={'ensure_ascii': False}, status=200)
+    return JsonResponse({'text':texts},json_dumps_params={'ensure_ascii': False}, status=200)
