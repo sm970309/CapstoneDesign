@@ -5,7 +5,7 @@ import sys
 from kss import split_sentences
 
 sys.path.append('../')
-from modules import yt,stt,unsmile
+from modules import yt,stt
 
 article = '''
 <!DOCTYPE html>
@@ -31,22 +31,22 @@ def index(request):
 @csrf_exempt
 def check(request):
     url = request.POST['url']
-    audio_file_path = yt.download_shorts(url)
-    if audio_file_path is None:
-        return HttpResponse("error occurred")
-    res_id = stt.useAPI(audio_file_path)
-    result = stt.makeTextline(res_id)
-    text= ''
-    for t in result['results']['utterances']:
-        text +=t['msg']
-    print(text)
-    texts = split_sentences(text)
-    print(texts)
+    # audio_file_path = yt.download_shorts(url)
+    # if audio_file_path is None:
+    #     return HttpResponse("error occurred")
+    # res_id = stt.useAPI(audio_file_path)
+    # result = stt.makeTextline(res_id)
+    # text= ''
+    # for t in result['results']['utterances']:
+    #     text +=t['msg']
+    # print(text)
+    # texts = split_sentences(text)
+    # print(texts)
     # text = unsmile.calcScore(text)
 
     # 프론트 연동 테스트용
-    # result = {'result': url}
-    # return JsonResponse(result)
+    result = {'result': url}
+    return JsonResponse({"result":result})
 
     # html에서 한글 깨지는 거 수정
-    return JsonResponse({'text':texts},json_dumps_params={'ensure_ascii': False}, status=200)
+    # return JsonResponse({'text':texts},json_dumps_params={'ensure_ascii': False}, status=200)
