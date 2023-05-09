@@ -5,7 +5,7 @@ import sys
 from kss import split_sentences
 
 sys.path.append('../')
-from modules import yt,stt
+from modules import yt,stt,unsmile
 
 article = '''
 <!DOCTYPE html>
@@ -41,8 +41,8 @@ def check(request):
         all_text +=t['msg']
     texts = split_sentences(all_text)
     print(texts)
-    # for text in texts:
-    #     print(unsmile.calcScore(text))
+    for text in texts:
+        print(unsmile.calcScore(text))
 
     # html에서 한글 깨지는 거 수정
     return JsonResponse({'result':texts},json_dumps_params={'ensure_ascii': False}, status=200)
