@@ -1,6 +1,6 @@
 from transformers import TextClassificationPipeline, BertForSequenceClassification, AutoTokenizer
 
-model_name = 'smilegate-ai/kor_unsmile'
+model_name = 'server/modules/unsmile_model'
 
 model = BertForSequenceClassification.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
