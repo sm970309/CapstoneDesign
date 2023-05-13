@@ -1,8 +1,8 @@
-from transformers import TextClassificationPipeline, BertForSequenceClassification, AutoTokenizer
+from transformers import TextClassificationPipeline, ElectraForSequenceClassification, AutoTokenizer
 
-model_name = 'smilegate-ai/kor_unsmile'
-
-model = BertForSequenceClassification.from_pretrained(model_name)
+model_name = 'server\electra_param_preprocessing'
+# model_name = 'smilegate-ai/kor_unsmile'
+model = ElectraForSequenceClassification.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 pipe = TextClassificationPipeline(
@@ -10,11 +10,11 @@ pipe = TextClassificationPipeline(
     tokenizer=tokenizer,
     device=-1,     # cpu: -1, gpu: gpu number
     return_all_scores=True,
+    # top_k=None,
     function_to_apply='sigmoid'
     )
 
 def calcScore(textline):
-    textlist = textline
     i = 0
     index = 0
     score = 0
@@ -23,21 +23,22 @@ def calcScore(textline):
             '특정한 연령을 비하하는 단어가 포함되어 있어요', '특정 지역을 비하하는 단어가 포함되어 있어요',
             '특정 종교를 비하하는 단어가 포함되어 있어요', '혐오적인 단어가 포함되어 있어요',
             '악플이나 욕설인 단어가 포함되어 있어요', '깨끗한 문장입니다.']
-    
-    for p in pipe(textline)[0]:
+    text_pipe = pipe(textline)[0]
+    for p in text_pipe:
         for key, value in p.items():
             if key == 'score':
                 if score < value:
                     score = value
                     index = i
-        i += 1            
-    
-    
-    problemlist= [textlist,reasonlist[index]]
-    return problemlist
+        i += 1  
+    is_not_good=False          
+    if index !=9:
+        is_not_good = True
+    return is_not_good,text_pipe,reasonlist[index]
 
 def sendServer(problemlist):
     pass
 
 
-
+if __name__=="__main__":
+    print(calcScore(input("text 입력: ")))
