@@ -87,6 +87,14 @@ public class EnterlinkActivity extends AppCompatActivity {
 
             request.setShouldCache(false);
             requestQueue.add(request);
+
+            request.setRetryPolicy(new com.android.volley.DefaultRetryPolicy(
+
+                    25000 ,
+
+                    com.android.volley.DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+
+                    com.android.volley.DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         }
 
 }
