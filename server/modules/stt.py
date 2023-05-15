@@ -8,12 +8,12 @@ if __name__ != '__main__':
     URL = 'https://openapi.vito.ai/v1/transcribe'
     config = {
     "diarization": {
-        "use_verification": True,
-        "user_id": "user-id-1",
-        "partner_id": "partner-id-1"
+        "use_verification": False,
+        # "user_id": "user-id-1",
+        # "partner_id": "partner-id-1"
     },
     "use_multi_channel": False,
-    "use_disfluency_filter": False,
+    "use_disfluency_filter": True,
     }
     headers = {
         'Authorization': f'bearer {access_token}',
@@ -53,6 +53,8 @@ if __name__ == '__main__':
     config = {
     "diarization": {
         "use_verification": False,
+        # "user_id": "user-id-1",
+        # "partner_id": "partner-id-1"
     },
     "use_multi_channel": False,
     "use_disfluency_filter": True,

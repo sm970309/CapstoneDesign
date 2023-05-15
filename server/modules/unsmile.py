@@ -1,8 +1,8 @@
-from transformers import TextClassificationPipeline, ElectraForSequenceClassification, AutoTokenizer
+from transformers import TextClassificationPipeline, ElectraForSequenceClassification, AutoTokenizer, BertForSequenceClassification
 
-model_name = 'server\electra_param_preprocessing'
-# model_name = 'smilegate-ai/kor_unsmile'
-model = ElectraForSequenceClassification.from_pretrained(model_name)
+# model_name = 'server\electra_param_preprocessing'
+model_name = 'smilegate-ai/kor_unsmile'
+model = BertForSequenceClassification.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 pipe = TextClassificationPipeline(
@@ -32,12 +32,11 @@ def calcScore(textline):
                     index = i
         i += 1  
     is_not_good=False          
-    if index !=9:
+
+    # clean이 30% 이상일 때, 가장 높은 index의 score가 0.6 이하일 때는 good
+    if (index !=9) & (text_pipe[-1]['score']<0.3) & (text_pipe[index]['score']>0.6):
         is_not_good = True
     return is_not_good,text_pipe,reasonlist[index]
-
-def sendServer(problemlist):
-    pass
 
 
 if __name__=="__main__":
