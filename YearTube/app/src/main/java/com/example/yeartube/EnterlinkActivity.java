@@ -57,8 +57,7 @@ public class EnterlinkActivity extends AppCompatActivity {
         public void makeRequest() {
             String url = edit_youtube_link.getText().toString();
 
-            StringRequest request = new StringRequest(Request.Method.POST,
-                    "https://267d-117-16-244-19.ngrok-free.app/check/",
+            StringRequest request = new StringRequest(Request.Method.POST, "https://267d-117-16-244-19.ngrok-free.app/check/",
                 new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
