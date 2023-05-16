@@ -50,6 +50,7 @@ def check(request):
     all_text= ''
     for stt_result_text in stt_result['results']['utterances']:
         all_text +=stt_result_text['msg']
+    print(all_text)
     texts = split_sentences(all_text) # 문장 분리
 
     # unsmile 부분
@@ -58,11 +59,15 @@ def check(request):
     ps = [] # problem_sentences 
     for text in texts:
         is_not_good,text_pipe,reason = unsmile.calcScore(text)
+        tmp ={}
         if is_not_good:
             nps += 1
-            ps.append([text,reason])
+            tmp['sentence']=text
+            tmp['reason']=reason
         for t in text_pipe:
             unsmile_score[t['label']]+=t['score']
+        if len(tmp)>0:
+            ps.append(tmp)
     response['num_problem_sentences'] = nps
     response['problem_sentences'] = ps
     for key in unsmile_score.keys():
