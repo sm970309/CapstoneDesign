@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 import sys
 from kss import split_sentences
 from collections import defaultdict
+import json
 
 sys.path.append('../')
 from modules import yt,stt,unsmile
@@ -31,8 +32,13 @@ def index(request):
 
 @csrf_exempt
 def check(request):
+    try:
+        url = request.POST['url']
+    except:
+        print('JSON 데이터')
+        data=json.loads(request.body)
+        url = data.get('url')
     response = {}
-    url = request.POST['url']
 
     # yt 부분
     yt_res,yt_content = yt.download_shorts(url)
