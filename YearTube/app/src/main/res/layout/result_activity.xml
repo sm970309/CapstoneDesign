@@ -7,17 +7,18 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="제목 : 드라마 속 군대가 핵노답인 이유"
+        android:textSize="20sp"/>
 
     <View
         android:id="@+id/view_dash_line"
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="5dp"
         android:layout_gravity="center"
-        android:background="@color/black"
+        android:background="@color/gray"
         android:layerType="hardware" />
 
     <LinearLayout
@@ -26,49 +27,51 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/img_age"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="10dp"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:src="@drawable/age12" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView_age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="TextView"
-            android:textSize="20sp" />
+            android:text="12세이상 이용 권장"
+            android:textSize="25sp" />
     </LinearLayout>
 
     <View
         android:id="@+id/view_dash_line2"
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="5dp"
         android:layout_gravity="center"
-        android:background="@color/black"
+        android:background="@color/gray"
         android:layerType="hardware" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView_sentence"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="문제가 될 수 있는 문장  \n [여러분 새끼 봐라 달란내고 덥섭죠] : \n 악플이나 욕설인 단어가 포함되어 있어요"
+        android:textSize="20sp" />
 
     <View
         android:id="@+id/view_dash_line3"
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="5dp"
         android:layout_gravity="center"
-        android:background="@color/black"
+        android:background="@color/gray"
         android:layerType="hardware" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView_gpt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="TextView" />
+        android:text="CHAT-GPT의 설명 : \n 해당 문장에서 '새끼'라는 단어는 악플이나 욕설로 사용될 수 있는 단어 중 하나입니다. 이 단어는 타인에 대한 경멸이나 모욕을 의미하는 용어로 사용될 수 있기 때문에 부적절한 표현으로 여겨질 수 있습니다."
+        android:textSize="20sp"/>
 
 
 </LinearLayout>
