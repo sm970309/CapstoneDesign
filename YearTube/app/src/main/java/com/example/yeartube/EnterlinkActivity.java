@@ -19,9 +19,15 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -57,21 +63,51 @@ public class EnterlinkActivity extends AppCompatActivity {
         public void makeRequest() {
             String url = edit_youtube_link.getText().toString();
 
-            StringRequest request = new StringRequest(Request.Method.POST, "https://267d-117-16-244-19.ngrok-free.app/check/",
-                new Response.Listener<String>() {
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, "https://267d-117-16-244-19.ngrok-free.app/check/", null,
+                new Response.Listener<JSONObject>() {
                         @Override
-                        public void onResponse(String response) {
-                            Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
-                            intent.putExtra("text", response);
-                            startActivity(intent);
+                        public void onResponse(JSONObject response) {
+                            //여기서 response 다루기
+                            try {
+                                String result = response.getString("result");
+                                if (result.equals("y")) {
+                                    Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                                    String title = response.getString("title");
+                                    int num_problem_sentences = response.getInt("num_problem_sentences");
+                                    int age = response.getInt("age");
+
+                                    ArrayList<String> sentences = new ArrayList<String>();
+                                    ArrayList<String> gpts = new ArrayList<String>();
+                                    JSONArray jsentences = response.getJSONArray("problem_sentences");
+                                    JSONArray jgpts = response.getJSONArray("gpt");
+                                    for (int i = 0; i < num_problem_sentences; i++) {
+                                        Object element = jsentences.get(i);
+                                        JSONObject arr = (JSONObject) element;
+                                        sentences.add(arr.getString("sentence") + " : \n " + arr.getString("reason"));
+                                        //gpts.add(arr.getString("gpt"));
+                                    }
+
+                                    intent.putStringArrayListExtra("problem_sentences", sentences);
+                                    //intent.putStringArrayListExtra("gpts", gpts);
+                                    intent.putExtra("title", title);
+                                    intent.putExtra("age", age);
+                                    intent.putExtra("num_problem_sentences", num_problem_sentences);
+                                    startActivity(intent);
+                                } else {
+                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                    startActivity(intent);
+                                }
+                            } catch (JSONException e) {
+                                throw new RuntimeException(e);
+                            }
+
                         }
                     },
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
                             //Log.e("error response",error.getMessage());
-                            Intent intent = new Intent(getApplicationContext(), LoadingScreenActivity.class);
-                            startActivity(intent);
+
                         }
                     }
             ) {
