@@ -65,6 +65,8 @@ def check(request):
     ps = [] # problem_sentences 
     for text in texts:
         is_not_good,text_pipe,reason = unsmile.calcScore(text)
+        print(text,text_pipe)
+        print()
         tmp ={}
         if is_not_good:
             nps += 1
@@ -76,9 +78,10 @@ def check(request):
             ps.append(tmp)
     response['num_problem_sentences'] = nps
     response['problem_sentences'] = ps
-    for key in unsmile_score.keys():
+    for key in unsmile_score.keys():    #score별 평균 구하기
         unsmile_score[key] /= len(texts)
-    response['score'] = unsmile_score
+
+    response['age'] = unsmile.select_age(nps, unsmile_score['clean'])
 
     # html에서 한글 깨지는 거 수정
     return JsonResponse(response,json_dumps_params={'ensure_ascii': False}, status=200)
