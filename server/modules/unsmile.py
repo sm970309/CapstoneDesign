@@ -41,6 +41,7 @@ def calcScore(textline):
 def select_age(num_problem_sentences,score):
     if num_problem_sentences==0:
         return 0
+    # clean이 0.73보다 크면 7세
     if score>0.73:
         return 7
     return 12
