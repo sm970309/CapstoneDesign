@@ -28,6 +28,8 @@ def useAPI(audio_file_path):
     
     files = {'file': open(audio_file_path, 'rb')}    
     res = requests.post(URL, headers=headers, data=data, files=files)
+    print(files)
+    print(res.json())
     res_id=res.json()['id']
     return res_id
 
