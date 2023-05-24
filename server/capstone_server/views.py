@@ -34,11 +34,13 @@ def index(request):
 def check(request):
     try:
         url = request.POST['url']
+        print(url)
     except:
         print('JSON 데이터')
         data=json.loads(request.body)
         url = data.get('url')
-    print(url)
+        print(url)
+    
     response = {}
 
     # yt 부분
