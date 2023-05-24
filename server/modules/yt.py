@@ -9,7 +9,6 @@ DIR_ORIGIN = os.path.join(parent_path,'audio_file')
 
 # youtube url 불러와서 mp4,mp3파일로 저장
 def download_shorts(url):
-    print(url)
     if not os.path.exists(DIR_ORIGIN): 
         os.mkdir(DIR_ORIGIN)
     if url.split('/')[-2]!='shorts':

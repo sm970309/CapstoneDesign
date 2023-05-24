@@ -38,6 +38,7 @@ def check(request):
         print('JSON 데이터')
         data=json.loads(request.body)
         url = data.get('url')
+    print(url)
     response = {}
 
     # yt 부분
